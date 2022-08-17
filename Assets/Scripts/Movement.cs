@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 public class Movement : MonoBehaviour
 {
-    private Rigidbody rb;
-    private AudioSource audioSource;
+    
     [SerializeField] private float mainThrust = 100f;
     [SerializeField] private float rotateSpeed = 100f;
+    [SerializeField] private AudioClip mainEngine;
+    
+    private Rigidbody rb;
+    private AudioSource audioSource;
 
     void Start()
     {
@@ -16,11 +16,11 @@ public class Movement : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-
     void Update()
     {
         ProcessThrust();
         ProcessRotation();
+
     }
 
     private void ProcessThrust()
@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
             rb.AddRelativeForce(mainThrust * Time.deltaTime * Vector3.up); //Do in this order, less operations /more efficient
             if (!audioSource.isPlaying)
             {
-                audioSource.Play();  
+                audioSource.PlayOneShot(mainEngine);  
             }
         }
         else

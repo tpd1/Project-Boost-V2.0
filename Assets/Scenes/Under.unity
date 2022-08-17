@@ -375,7 +375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1202613258512391406, guid: 4abfb08595dc8b149a3c04bfb84c32ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.58
+      value: 18.15
       objectReference: {fileID: 0}
     - target: {fileID: 1202613258512391406, guid: 4abfb08595dc8b149a3c04bfb84c32ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -413,6 +413,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 6852467929528190311, guid: 4abfb08595dc8b149a3c04bfb84c32ef, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 91f51e63d3bc0a8479ee2be6d78a50cc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4abfb08595dc8b149a3c04bfb84c32ef, type: 3}
 --- !u!1001 &1728537016
