@@ -6,12 +6,14 @@ using UnityEngine.PlayerLoop;
 public class Movement : MonoBehaviour
 {
     private Rigidbody rb;
+    private AudioSource audioSource;
     [SerializeField] private float mainThrust = 100f;
     [SerializeField] private float rotateSpeed = 100f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -26,6 +28,14 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             rb.AddRelativeForce(mainThrust * Time.deltaTime * Vector3.up); //Do in this order, less operations /more efficient
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();  
+            }
+        }
+        else
+        {
+            audioSource.Stop();
         }
     }
 
